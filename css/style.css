@@ -1,0 +1,94 @@
+/* ==========================================================================
+   PARTE 1: RESET BÁSICO
+   - Remove estilos padrão do navegador para uma base limpa.
+   ========================================================================== */
+
+/* 1. Use um box-sizing mais intuitivo. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remova margens e preenchimentos padrão. */
+* {
+  margin: 0;
+  padding: 0;
+  /* Garante que fontes e cores sejam herdadas em elementos de formulário */
+  font: inherit;
+}
+
+/* 3. Permita que os elementos do corpo cresçam para preencher a viewport. */
+body {
+  min-height: 100vh;
+}
+
+/* 4. Torne as imagens e mídias mais fáceis de trabalhar. */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+
+/* ==========================================================================
+   PARTE 2: VARIÁVEIS GLOBAIS (:root)
+   - Define as "constantes" do seu design (cores, fontes, espaçamentos).
+   ========================================================================== */
+
+:root {
+  /* CORES (Colors) */
+  --cor-primaria: #007bff;
+  --cor-secundaria: #6c757d;
+  --cor-fundo: #ffffff;
+  --cor-texto: #212529;
+  --cor-sucesso: #28a745;
+  --cor-perigo: #dc3545;
+  --cor-aviso: #ffc107;
+
+  /* TIPOGRAFIA (Typography) */
+  --fonte-principal: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --fonte-mono: "Courier New", Courier, monospace;
+
+  --tamanho-base-fonte: 1rem;
+  /* Geralmente 16px */
+  --altura-linha: 1.5;
+
+  /* ESPAÇAMENTO E LAYOUT (Spacing & Layout) */
+  --espacamento-base: 1rem;
+  --raio-borda: 0.25rem;
+  --largura-container: 1140px;
+}
+
+[data-theme="dark"] {
+  --color-body-default: #06005e;
+}
+
+/* ==========================================================================
+   PARTE 3: ESTILOS GLOBAIS E PADRÕES
+   - Aplica as variáveis globais a elementos base como <html> e <body>.
+   ========================================================================== */
+
+html {
+  /* Define a base para que 1rem = 16px */
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fonte-principal);
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  line-height: var(--altura-linha);
+  -webkit-font-smoothing: antialiased;
+  /* Melhora a renderização da fonte no Mac/iOS */
+}
+
+@media (min-width: 1440px) {
+  .defaultDesktop {
+    top: 150px;
+  }
+}
