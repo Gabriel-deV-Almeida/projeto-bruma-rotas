@@ -337,7 +337,13 @@ body {
   }
 }
 
+.Carrossel {}
 
+.cardCarrossel {}
+
+.imgCardCarrossel {}
+
+.cardCarrosselTextos {}
 
 @media (min-width: 1440px) {
   .defaultDesktop {
