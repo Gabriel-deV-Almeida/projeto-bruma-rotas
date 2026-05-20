@@ -85,13 +85,14 @@ body {
   line-height: var(--altura-linha);
   -webkit-font-smoothing: antialiased;
   /* Melhora a renderização da fonte no Mac/iOS */
+  margin: 0 auto;
 }
 
 .header {
   background-color: rgba(83, 42, 9, 0.4);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   height: 64px;
-  width: 100%;
+  width: 100dvw;
   padding: 0px 20px;
   display: flex;
   justify-content: space-between;
@@ -132,6 +133,10 @@ body {
   justify-content: center;
   align-items: center;
   gap: 3px;
+}
+
+main {
+  width: 100dvw;
 }
 
 .hero {
@@ -229,7 +234,7 @@ body {
   margin-left: -20px;
   margin-right: -20px;
   z-index: 2;
-  bottom: 0;
+  bottom: -0.5px;
   max-height: 70px;
 }
 
@@ -444,6 +449,7 @@ body {
   display: flex;
   /*overflow: auto;*/
   position: relative;
+  overflow: hidden;
 }
 
 .containerNewsletter {
@@ -618,5 +624,10 @@ body {
 
   .containerBg--motanha {
     max-height: 100px;
+  }
+
+  body {
+    width: 1440px;
+
   }
 }
