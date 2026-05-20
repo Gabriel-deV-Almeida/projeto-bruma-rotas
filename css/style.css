@@ -259,8 +259,16 @@ main {
 .cardFavorito {
   background-color: #06005e;
   min-width: 253px;
+  /*novo*/
   max-width: 608px;
-  width: 253px;
+  /*nono*/
+  width: 100%;
+  /*nono*/
+  /*width: 253px;*/
+
+  min-width: 162px;
+  max-height: ;
+
   height: 162px;
   position: relative;
 
