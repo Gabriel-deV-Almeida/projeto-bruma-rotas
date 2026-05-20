@@ -257,6 +257,9 @@ main {
 }
 
 .cardFavorito {
+  background-color: #06005e;
+  min-width: 253px;
+  max-width: 608px;
   width: 253px;
   height: 162px;
   position: relative;
@@ -547,6 +550,7 @@ main {
 }
 
 .footer {
+  width: 100dvw;
   padding: 48px 20px;
   display: flex;
   justify-content: center;
@@ -628,6 +632,19 @@ main {
 
   body {
     width: 1440px;
+    margin: 0 auto;
+    background-color: #06005e;
+  }
 
+  .header {
+    width: 100%;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  .footer {
+    width: 100%;
   }
 }
