@@ -86,6 +86,7 @@ body {
   -webkit-font-smoothing: antialiased;
   /* Melhora a renderização da fonte no Mac/iOS */
   margin: 0 auto;
+  position: relative;
 }
 
 .header {
@@ -93,7 +94,12 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   height: 64px;
   width: 100dvw;
-  padding: 0px 20px;
+  /*padding: 0px 20px; antigo*/
+
+  padding-inline: clamp(20px,
+      calc(20px + 60 * ((100vw - 375px) / 1065)),
+      80px);
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -148,7 +154,13 @@ main {
   color: white;
   overflow: hidden;
   position: relative;
-  padding: 80px 20px;
+  padding: 80px 0px;
+  /*antigo*/
+
+  padding-inline: clamp(20px,
+      calc(20px + 60 * ((100vw - 375px) / 1065)),
+      80px);
+
   position: relative;
 
 }
@@ -246,7 +258,12 @@ main {
 
 .favoritos {
   width: 100%;
-  padding: 0px 20px;
+  /*padding: 0px 20px; antigo*/
+
+  padding-inline: clamp(20px,
+      calc(20px + 60 * ((100vw - 375px) / 1065)),
+      80px);
+
   padding-bottom: 48px;
   background-color: #FEFAE0;
   display: flex;
@@ -257,19 +274,14 @@ main {
 }
 
 .cardFavorito {
-  background-color: #06005e;
+  width: calc(100% - 82px);
   min-width: 253px;
-  /*novo*/
   max-width: 608px;
-  /*nono*/
-  width: 100%;
-  /*nono*/
-  /*width: 253px;*/
 
-  min-width: 162px;
-  max-height: ;
+  aspect-ratio: 253 / 162;
 
-  height: 162px;
+  min-height: 162px;
+  max-height: 395px;
   position: relative;
 
 }
@@ -291,8 +303,20 @@ main {
 }
 
 .cardFavoritoBg {
-  width: 218px;
-  height: 140px;
+  /*width: 218px; antigo*/
+  /*height: 140px; antigo*/
+  /*543px e 348px*/
+
+
+  width: calc(100% - 35px);
+  min-width: 218px;
+  max-width: 543px;
+
+  aspect-ratio: 218 / 140;
+
+  min-height: 140px;
+  max-height: 348px;
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -312,8 +336,18 @@ main {
 }
 
 .cardFavoritoTexto {
-  width: 226px;
-  height: 77px;
+  /*width: 226px; antigo
+  height: 77px; antigo */
+
+  width: calc(100% - 27px);
+  min-width: 226px;
+  max-width: 529px;
+
+  aspect-ratio: 226 / 77;
+
+  min-height: 77px;
+  max-height: 175px;
+
   background-color: #7B4618;
   position: absolute;
   bottom: 0;
@@ -325,9 +359,30 @@ main {
   justify-content: center;
 
   h3 {
+
+    /*height: 24px; antigo
+    width: 110px;*/
+
+    width: calc(100% - 116px);
+    min-width: 110px;
+    max-width: 262px;
+
+    aspect-ratio: 110 / 24;
+
+    min-height: 24px;
+    max-height: 60px;
+
+    /* top: -13px;*/
+    /**/
+
+    left: clamp(59px, calc(100% - 116px - 181px), 140px);
+    top: clamp(-13px, 425px, -30px);
+    /*left: 59px; 110 - 51 = 59*/
+    /*
+    top: -30px;          71
+    left: 140px; 262 - 122 = 140
+    */
     position: absolute;
-    height: 24px;
-    width: 110px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -337,12 +392,14 @@ main {
     font-family: "dovetail-mvb";
     background-color: #BFC882;
     border-radius: 46px;
-    top: -13px;
-    left: 59px;
+
     color: #7B4618;
     -webkit-box-shadow: 0px 4px 4px 0px #532A09;
     box-shadow: 0px 4px 4px 0px #532A09;
   }
+
+
+
 
   p {
     font-size: 10px;
@@ -356,7 +413,13 @@ main {
 
 .Carrossel {
   background-color: #2E401C;
-  padding: 48px 20px;
+  padding: 48px 0px;
+  /*antigo*/
+
+  padding-inline: clamp(20px,
+      calc(20px + 60 * ((100vw - 375px) / 1065)),
+      80px);
+
   display: flex;
   overflow: auto;
 }
@@ -456,7 +519,13 @@ main {
 
 .newsletter {
   background-color: #A4B75C;
-  padding: 48px 20px;
+  padding: 48px 0px;
+  /*antigo*/
+
+  padding-inline: clamp(20px,
+      calc(20px + 60 * ((100vw - 375px) / 1065)),
+      80px);
+
   display: flex;
   /*overflow: auto;*/
   position: relative;
@@ -559,7 +628,13 @@ main {
 
 .footer {
   width: 100dvw;
-  padding: 48px 20px;
+  padding: 48px 0px;
+  /*antigo*/
+
+  padding-inline: clamp(20px,
+      calc(20px + 60 * ((100vw - 375px) / 1065)),
+      80px);
+
   display: flex;
   justify-content: center;
   gap: 16px;
@@ -656,3 +731,45 @@ main {
     width: 100%;
   }
 }
+
+@media (min-width: 425px) {
+
+  .cardFavoritoTexto {
+    h3 {
+      top: clamp(-25px, 100%, -30px);
+    }
+  }
+
+}
+
+
+@media (min-width: 519px) {
+  .cardFavoritoTexto {
+    h3 {
+      /*
+      left: clamp(59px, calc(100% - 116px - 181px), 140px);*/
+      left: clamp(70px, calc(50% - 116px - 181px), 100px);
+
+    }
+  }
+}
+
+@media (min-width: 674px) {
+  .cardFavoritoTexto {
+    h3 {
+      left: clamp(90px, calc(100% - 116px - 181px), 140px);
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .cardFavoritoTexto {
+    h3 {
+      top: clamp(-30px, 425px, -30px);
+    }
+  }
+}
+
+@media (min-width: 1024px) {}
+
+@media (min-width: 1440px) {}
