@@ -106,30 +106,30 @@ body {
   -webkit-backdrop-filter: blur(5px);
 }
 
-.spanHeaderLogo {
+.header__logo {
   width: 98px;
 }
 
-.headerLogo {
+.footer__logo-image {
   width: 100%;
 }
 
-.menu {
+.header__nav {
   font-size: 10px;
 }
 
-.menu ul {
+.header__menu {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 12px;
 }
 
-.menu li {
+.header__menu-item {
   list-style: none;
 }
 
-.menu a {
+.header__menu-link {
   color: #FCC650;
   text-decoration: none;
   display: flex;
@@ -159,7 +159,7 @@ main {
 
 }
 
-.content {
+.hero__content {
   position: relative;
   z-index: 2;
   display: flex;
@@ -169,7 +169,7 @@ main {
   gap: 12px;
 }
 
-.heroBlur {
+.hero__blur {
   backdrop-filter: blur(2px);
   background-color: rgba(83, 42, 9, 0.4);
   /*-webkit-backdrop-filter: blur(5px);*/
@@ -178,7 +178,7 @@ main {
   inset: 0;
 }
 
-.hero h1 {
+.hero__title {
   font-size: 18px;
   font-weight: 900;
   color: #FEFAE0;
@@ -191,7 +191,7 @@ main {
   }
 }
 
-.hero p {
+.hero__description {
   font-size: 10px;
   font-weight: 400;
   color: #FEFAE0;
@@ -200,7 +200,7 @@ main {
   font-family: "rl-horizon";
 }
 
-.cotainerHeroBtn {
+.hero__actions {
   margin-top: 4px;
   width: 100%;
   height: 32px;
@@ -232,7 +232,7 @@ main {
   height: ;
 }
 */
-.containerBg--motanha {
+.hero__mountains {
   aspect-ratio: 375 / 47;
   line-height: 0;
   width: 100%;
@@ -263,7 +263,7 @@ main {
   gap: 24px;
 }
 
-.cardFavorito {
+.favoritos__card {
   /*
   width: calc(100% - 82px);
   min-width: 253px;
@@ -282,15 +282,15 @@ main {
 
 }
 
-.alinharStart {
+.favoritos__card--start {
   align-self: self-start;
 }
 
-.alinharEnd {
+.favoritos__card--end {
   align-self: self-end;
 }
 
-.favoritos h2 {
+.favoritos__title {
   width: 100%;
   font-weight: 900;
   /*font-size: 14px;*/
@@ -301,7 +301,7 @@ main {
   margin-bottom: -12px;
 }
 
-.cardFavoritoBg {
+.favorites__card-image {
   /*width: 218px; antigo*/
   /*height: 140px; antigo*/
   /*543px e 348px*/
@@ -327,19 +327,7 @@ main {
   border-radius: 12px;
 }
 
-.cardFavoritoBg1 {
-  background-image: url("https://i.postimg.cc/tT9914Kb/Topo-do-mundo.png");
-}
-
-.cardFavoritoBg2 {
-  background-image: url("https://i.postimg.cc/JhYQ0PYG/Cachoeira-das-Ostras.png");
-}
-
-.cardFavoritoBg3 {
-  background-image: url("https://i.postimg.cc/PqDqvq2B/Ruinas-do-Forte.png");
-}
-
-.cardFavoritoTexto {
+.favorites__card-content {
   /* antigo */
 
   /*
@@ -366,11 +354,13 @@ main {
   align-items: center;
   justify-content: center;
 
-  h3 {
+}
 
-    /*height: 24px; antigo
+.favorites__card-title {
+
+  /*height: 24px; antigo
     width: 110px;*/
-    /*
+  /*
     width: calc(100% - 116px);
     min-width: 110px;
     max-width: 262px;
@@ -380,64 +370,60 @@ main {
     min-height: 24px;
     max-height: 60px;
     */
-    /* top: -13px;*/
-    /**/
-    /*
+  /* top: -13px;*/
+  /**/
+  /*
     left: clamp(59px, calc(100% - 116px - 181px), 140px);
     top: clamp(-13px, 425px, -30px); */
-    /*left: 59px; 110 - 51 = 59*/
-    /*
+  /*left: 59px; 110 - 51 = 59*/
+  /*
     top: -30px;          71
     left: 140px; 262 - 122 = 140
     */
 
-    height: 24px;
-    width: 110px;
+  height: 24px;
+  width: 110px;
 
-    top: -13px;
-    left: 59px;
-
-
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 700;
-
-    /*font-size: 10px;*/
-
-    font-size: clamp(10px,
-        calc(10px + (12 * ((100vw - 375px) / 1065))),
-        22px);
-
-    line-height: 14px;
-    font-family: "dovetail-mvb";
-    background-color: #BFC882;
-    border-radius: 46px;
-
-    color: #7B4618;
-    -webkit-box-shadow: 0px 4px 4px 0px #532A09;
-    box-shadow: 0px 4px 4px 0px #532A09;
-  }
+  top: -13px;
+  left: 59px;
 
 
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
 
+  /*font-size: 10px;*/
 
-  p {
-    /*font-size: 10px;*/
-    font-size: clamp(10px,
-        calc(10px + (12 * ((100vw - 375px) / 1065))),
-        22px);
-    font-weight: 0 !important;
-    text-align: center;
-    line-height: 14px;
-    font-family: "rl-horizon";
-    color: #FEFAE0;
-    padding: 0 8px;
-  }
+  font-size: clamp(10px,
+      calc(10px + (12 * ((100vw - 375px) / 1065))),
+      22px);
+
+  line-height: 14px;
+  font-family: "dovetail-mvb";
+  background-color: #BFC882;
+  border-radius: 46px;
+
+  color: #7B4618;
+  -webkit-box-shadow: 0px 4px 4px 0px #532A09;
+  box-shadow: 0px 4px 4px 0px #532A09;
 }
 
-.Carrossel {
+.favorites__card-description {
+  /*font-size: 10px;*/
+  font-size: clamp(10px,
+      calc(10px + (12 * ((100vw - 375px) / 1065))),
+      22px);
+  font-weight: 0 !important;
+  text-align: center;
+  line-height: 14px;
+  font-family: "rl-horizon";
+  color: #FEFAE0;
+  padding: 0 8px;
+}
+
+.carousel {
   background-color: #2E401C;
   padding: 48px 20px;
 
@@ -445,7 +431,7 @@ main {
   overflow: auto;
 }
 
-.group {
+.carousel__container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -453,7 +439,7 @@ main {
   width: auto;
 }
 
-.h2Carrossel {
+.carousel__title {
   width: 132px;
   font-size: 14px;
   font-weight: 900;
@@ -462,11 +448,11 @@ main {
   font-family: "meursault-variable";
 }
 
-.group::-webkit-scrollbar {
+.carousel__container::-webkit-scrollbar {
   display: none;
 }
 
-.cardCarrossel {
+.carousel__card {
   flex: 0 0 156px;
   width: 156px;
   height: 155px;
@@ -482,7 +468,7 @@ main {
   align-items: center;
 }
 
-.cardCarrosselData {
+.carousel__date {
   position: absolute;
   right: 0px;
   top: 45px;
@@ -505,7 +491,7 @@ main {
   border-bottom-left-radius: 8px;
 }
 
-.imgCardCarrossel {
+.carousel__image {
   width: 100%;
   height: 110px;
   overflow: hidden;
@@ -513,29 +499,32 @@ main {
   display: flex;
   align-items: center;
 
-  img {
-    width: 100%;
-    background-size: cover;
-  }
+
 }
 
-.cardCarrosselTextos {
+.carousel__image-content {
+  width: 100%;
+  background-size: cover;
+}
+
+
+.carousel__content {
   color: #4D2708;
   font-family: "rl-horizon";
   text-align: start;
   padding: 4px 0px;
+}
 
-  h3 {
-    font-size: 10px;
-    font-weight: 700;
-    line-height: 10px;
-  }
+.carousel__card-title {
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 10px;
+}
 
-  p {
-    font-size: 8px;
-    font-weight: 400;
-    line-height: 10px;
-  }
+.carousel__card-location {
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 10px;
 }
 
 .newsletter {
@@ -549,7 +538,7 @@ main {
   overflow: hidden;
 }
 
-.containerNewsletter {
+.newsletter__content {
   flex: 0 0 238px;
   display: flex;
   flex-direction: column;
@@ -567,7 +556,7 @@ main {
   /*colocar a media query aqui*/
 }
 
-.newsletterH2 {
+.newsletter__title {
   font-size: 12px;
   font-weight: 900;
   line-height: 12px;
@@ -595,12 +584,12 @@ main {
   border: 0;
 }
 
-.containerInputsNewsletter {
+.newsletter__form {
   position: relative;
   width: 100%;
 }
 
-.inputEmailNewsletter {
+.newsletter__input {
   width: 100%;
   height: 25px;
 
@@ -616,7 +605,7 @@ main {
   color: #FCC650;
 }
 
-.inputEmailNewsletter::placeholder {
+.newsletter__input::placeholder {
   color: #FCC650;
   font-weight: 400;
   font-size: 8px;
@@ -625,7 +614,7 @@ main {
   font-family: "rl-horizon";
 }
 
-.btnEmailNewsletter {
+.newsletter__button {
   background-color: #4D2708;
   width: 86px;
   height: 25px;
@@ -653,11 +642,11 @@ main {
   background-color: #4D2708;
 }
 
-.logoFooter {
+.footer__logo {
   flex: 0 0 76px;
 }
 
-.boxFooter {
+.footer__section {
   min-width: 62px;
 
   font-size: 10px;
@@ -666,56 +655,60 @@ main {
   color: #FCC650;
   font-family: "rl-horizon";
 
-
-  ul {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  li {
-    list-style: none;
-  }
-
-  a {
-    text-decoration: none;
-
-    font-size: 8px;
-    font-weight: 400;
-    line-height: 8px;
-
-    color: #FCC650;
-  }
 }
 
-.boxFooter--redesSociais {
+.footer__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer__title {
+  list-style: none;
+}
+
+.footer__item {
+  list-style: none;
+}
+
+.footer__link {
+  text-decoration: none;
+
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 8px;
+
+  color: #FCC650;
+}
+
+.footer__section--social {
   flex: 0 0 62px;
-
-  ul {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 2px;
-  }
-
-  li:first-child {
-    width: 100%;
-    margin-bottom: 6px;
-  }
-
-  a {
-
-    svg {
-      width: 13px;
-      height: 13px;
-    }
-
-  }
 }
 
+.footer__list__social {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2px;
+  list-style: none;
+}
 
+.footer__title__social {
+  width: 100%;
+  margin-bottom: 6px;
+}
 
+.footer__item__social {}
+
+.footer__social-link__social {
+  color: #FCC650;
+}
+
+.footer__social-icon {
+  width: 13px;
+  height: 13px;
+}
 
 
 @media (min-width: 425px) {
@@ -732,7 +725,7 @@ main {
     padding: 80px 27px;
   }
 
-  .Carrossel {
+  .carousel {
     padding: 80px 27px;
   }
 
@@ -745,55 +738,52 @@ main {
     padding-bottom: 48px;
   }
 
-  .cardFavorito {
+  .favoritos__card {
     min-width: 269.62px;
     min-height: 172.94px;
   }
 
-  .favoritos h2 {
+  .favoritos__title {
     /*
     font-size: 35px;
     */
     /*Usar clamp de 14px para 35px*/
   }
 
-  .cardFavoritoBg {
+  .favorites__card-image {
     width: 233.26px;
     height: 149.77px;
   }
 
-  .cardFavoritoTexto {
+  .favorites__card-content {
     width: 240.23px;
     height: 81.60px;
 
+  }
 
-    h3 {
+  .favorites__card-title {
 
-      width: 117.14px;
-      height: 25.69px;
+    width: 117.14px;
+    height: 25.69px;
 
-      /*
+    /*
       top: -30px;
       left: 140px;
       */
-      top: -13px;
-      left: 59px;
+    top: -13px;
+    left: 59px;
 
-      /*
+    /*
       font-size: 22px;
       */
-    }
+  }
 
-
-
-
-    p {
-      /*
+  .favorites__card-description {
+    /*
       font-size: 22px;
       line-height: 32px;
       padding: 0 16px;
       */
-    }
   }
 }
 
@@ -805,58 +795,57 @@ main {
 
   .hero {}
 
-  .Carrossel {}
+  .carousel {}
 
   .newsletter {}
 
   .favoritos {}
 
-  .cardFavorito {
+  .favoritos__card {
     min-width: 331px;
     min-height: 213px;
   }
 
-  .favoritos h2 {
+  .favoritos__title {
     /*
     font-size: 35px;
     */
     /*Usar clamp de 14px para 35px*/
   }
 
-  .cardFavoritoBg {
+  .favorites__card-image {
     width: 289px;
     height: 186px;
   }
 
-  .cardFavoritoTexto {
+  .favorites__card-content {
     width: 292px;
     height: 99px;
+  }
 
+  .favorites__card-title {
 
-    h3 {
+    width: 143px;
+    height: 32px;
 
-      width: 143px;
-      height: 32px;
-
-      /*
+    /*
       top: -30px;
       left: 140px;
       */
-      top: -17px;
-      left: 75px;
+    top: -17px;
+    left: 75px;
 
-      /*
+    /*
       font-size: 22px;
       */
-    }
+  }
 
-    p {
-      /*
+  .favorites__card-description {
+    /*
       font-size: 22px;
       line-height: 32px;
       padding: 0 16px;
       */
-    }
   }
 }
 
@@ -874,7 +863,7 @@ main {
     padding: 80px 78px;
   }
 
-  .Carrossel {
+  .carousel {
     padding: 80px 78px;
   }
 
@@ -887,52 +876,52 @@ main {
     padding-bottom: 48px;
   }
 
-  .cardFavorito {
+  .favoritos__card {
     min-width: 384px;
     min-height: 247.98px;
   }
 
-  .favoritos h2 {
+  .favoritos__title {
     /*
     font-size: 35px;
     */
     /*Usar clamp de 14px para 35px*/
   }
 
-  .cardFavoritoBg {
+  .favorites__card-image {
     width: 337.92px;
     height: 216.83px;
   }
 
-  .cardFavoritoTexto {
+  .favorites__card-content {
     width: 337.82px;
     height: 113.16px;
 
+  }
 
-    h3 {
+  .favorites__card-title {
 
-      width: 166.07px;
-      height: 37.28px;
+    width: 166.07px;
+    height: 37.28px;
 
-      /*
+    /*
       top: -30px;
       left: 140px;
       */
-      top: -18px;
-      left: 90px;
+    top: -18px;
+    left: 90px;
 
-      /*
+    /*
       font-size: 22px;
       */
-    }
+  }
 
-    p {
-      /*
+  .favorites__card-description {
+    /*
       font-size: 22px;
       line-height: 32px;
       padding: 0 16px;
       */
-    }
   }
 }
 
@@ -944,53 +933,53 @@ main {
 
   .hero {}
 
-  .Carrossel {}
+  .carousel {}
 
   .newsletter {}
 
   .favoritos {}
 
-  .cardFavorito {
+  .favoritos__card {
     min-width: 434px;
     min-height: 281px;
   }
 
-  .favoritos h2 {}
+  .favoritos__title {}
 
-  .cardFavoritoBg {
+  .favorites__card-image {
     width: 385px;
     height: 247px;
   }
 
-  .cardFavoritoTexto {
+  .favorites__card-content {
     width: 383px;
     height: 128px;
 
+  }
 
-    h3 {
+  .favorites__card-title {
 
-      width: 188px;
-      height: 42px;
+    width: 188px;
+    height: 42px;
 
-      /*
+    /*
       top: -30px;
       left: 140px;
       */
-      top: -20px;
-      left: 100px;
+    top: -20px;
+    left: 100px;
 
-      /*
+    /*
       font-size: 22px;
       */
-    }
+  }
 
-    p {
-      /*
+  .favorites__card-description {
+    /*
       font-size: 22px;
       line-height: 32px;
       padding: 0 16px;
       */
-    }
   }
 }
 
@@ -1008,7 +997,7 @@ main {
     padding: 80px 116px;
   }
 
-  .Carrossel {
+  .carousel {
     padding: 80px 116px;
   }
 
@@ -1021,52 +1010,52 @@ main {
     padding-bottom: 48px;
   }
 
-  .cardFavorito {
+  .favoritos__card {
     min-width: 469px;
     min-height: 304px;
   }
 
-  .favoritos h2 {
+  .favoritos__title {
     /*
     font-size: 35px;
     */
     /*Usar clamp de 14px para 35px*/
   }
 
-  .cardFavoritoBg {
+  .favorites__card-image {
     width: 416px;
     height: 267px;
   }
 
-  .cardFavoritoTexto {
+  .favorites__card-content {
     width: 411px;
     height: 137px;
 
+  }
 
-    h3 {
+  .favorites__card-title {
 
-      width: 203px;
-      height: 46px;
+    width: 203px;
+    height: 46px;
 
-      /*
+    /*
       top: -30px;
       left: 140px;
       */
-      top: -24px;
-      left: 110px;
+    top: -24px;
+    left: 110px;
 
-      /*
+    /*
       font-size: 22px;
       */
-    }
+  }
 
-    p {
-      /*
+  .favorites__card-description {
+    /*
       font-size: 22px;
       line-height: 32px;
       padding: 0 16px;
       */
-    }
   }
 }
 
@@ -1078,53 +1067,52 @@ main {
 
   .hero {}
 
-  .Carrossel {}
+  .carousel {}
 
   .newsletter {}
 
   .favoritos {}
 
-  .cardFavorito {
+  .favoritos__card {
     min-width: 544px;
     min-height: 353px;
   }
 
-  .favoritos h2 {}
+  .favoritos__title {}
 
-  .cardFavoritoBg {
+  .favorites__card-image {
     width: 486px;
     height: 311px;
   }
 
-  .cardFavoritoTexto {
+  .favorites__card-content {
     width: 476px;
     height: 157px;
+  }
 
+  .favorites__card-title {
 
-    h3 {
+    width: 235px;
+    height: 53px;
 
-      width: 235px;
-      height: 53px;
-
-      /*
+    /*
       top: -30px;
       left: 140px;
       */
-      top: -26px;
-      left: 120px;
+    top: -26px;
+    left: 120px;
 
-      /*
+    /*
       font-size: 22px;
       */
-    }
+  }
 
-    p {
-      /*
+  .favorites__card-description {
+    /*
       font-size: 22px;
       line-height: 32px;
       padding: 0 16px;
       */
-    }
   }
 }
 
@@ -1133,7 +1121,7 @@ main {
     top: 150px;
   }
 
-  .containerBg--motanha {
+  .hero__mountains {
     max-height: 100px;
   }
 
@@ -1161,7 +1149,7 @@ main {
     padding: 80px 160px;
   }
 
-  .Carrossel {
+  .carousel {
     padding: 80px 160px;
   }
 
@@ -1175,42 +1163,42 @@ main {
     gap: 24px;
   }
 
-  .cardFavorito {
+  .favoritos__card {
 
     min-width: 608px;
     min-height: 395px;
 
   }
 
-  .cardFavoritoBg {
+  .favorites__card-image {
 
     width: 543px;
     height: 348px;
 
   }
 
-  .cardFavoritoTexto {
+  .favorites__card-content {
 
     width: 529px;
     height: 175px;
+  }
 
-    h3 {
+  .favorites__card-title {
 
-      height: 60px;
-      width: 262px;
+    height: 60px;
+    width: 262px;
 
-      top: -30px;
-      left: 140px;
+    top: -30px;
+    left: 140px;
 
-      /*font-size: 22px;*/
-      font-size: clamp(10px,
-          calc(10px + (12 * ((100vw - 375px) / 1065))),
-          22px);
-    }
+    /*font-size: 22px;*/
+    font-size: clamp(10px,
+        calc(10px + (12 * ((100vw - 375px) / 1065))),
+        22px);
+  }
 
-    p {
-      line-height: 32px;
-      padding: 0 16px;
-    }
+  .favorites__card-description {
+    line-height: 32px;
+    padding: 0 16px;
   }
 }

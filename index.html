@@ -11,10 +11,9 @@
 
 <body>
     <header class="header">
-        <span class="spanHeaderLogo">
-
-            <svg data-logo="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 283.88999938964844 41"
-                class="headerLogo">
+        <span class="header__logo">
+            <svg data-logo="header__logo-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 283.88999938964844 41"
+                class="header__logo-image">
                 <g id="logogram" transform="
     translate(0, 0.5)
     rotate(0 20 20)
@@ -30,14 +29,14 @@
                 </g>
 
             </svg>
-
         </span>
-        <nav class="menu">
-            <ul>
-                <li>
-                    <a href="">
-                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="12" height="12"
-                            viewBox="0,0,256,256">
+
+        <nav class="header__nav">
+            <ul class="header__menu">
+                <li class="header__menu-item">
+                    <a href="" class="header__menu-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="header__menu-icon" x="0px" y="0px" width="12"
+                            height="12" viewBox="0,0,256,256">
                             <g fill="#fcc650" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
                                 stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
                                 font-family="none" font-weight="none" font-size="none" text-anchor="none"
@@ -52,9 +51,11 @@
                         Explore por categorias
                     </a>
                 </li>
-                <li>
-                    <a href="">
-                        <img src="assets\icons\person_24dp_FCC650_FILL1_wght400_GRAD0_opsz24.svg" alt="" width="12px">
+
+                <li class="header__menu-item">
+                    <a href="" class="header__menu-link">
+                        <img class="header__menu-icon"
+                            src="assets/icons/person_24dp_FCC650_FILL1_wght400_GRAD0_opsz24.svg" alt="" width="12">
                         Login
                     </a>
                 </li>
@@ -63,114 +64,121 @@
     </header>
 
     <main>
-
         <section class="hero">
-            <div class="heroBlur"></div>
-            <div class="content">
-                <h1>Sua experiência em <span>Brumadinho</span>, nunca mais será a mesma!</h1>
-                <p>Realizando o nosso Quiz, você cria um roteiro personalizado de acordo com as suas preferências, mas
+            <div class="hero__blur"></div>
+            <div class="hero__content">
+                <h1 class="hero__title">Sua experiência em <span>Brumadinho</span>, nunca mais será a mesma!</h1>
+                <p class="hero__description">Realizando o nosso Quiz, você cria um roteiro personalizado de acordo com
+                    as suas preferências, mas
                     se
                     preferir, você pode explorar e montar seu roteiro da forma que quiser.
                 </p>
-                <div class="cotainerHeroBtn">
+                <div class="hero__actions">
                     <button class="btn bold">Fazer o quiz</button>
                     <button class="btn">Explorar o mapa</button>
                 </div>
             </div>
-
-
-
-            <div class="containerBg--motanha">
+            <div class="hero__mountains">
                 <!--<img src="assets/icons/Montanhas SVG ok.svg" alt="" class="bg--motanha"> -->
 
-                <svg viewBox="0 0 375 47" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 375 47" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"
+                    class="hero__mountains-svg">
                     <path d="M0,47 v-15 C30,25 60,10 90,20 S140,5 180,18 S240,-5 290,15 S340,10 375,25 v22 Z"
                         fill="#FEFAE0" />
                 </svg>
 
             </div>
-
         </section>
 
-        <section class="favoritos">
-            <h2>Favoritos de Brumadinho</h2>
 
-            <article class="cardFavorito alinharStart">
-                <div class="cardFavoritoBg cardFavoritoBg1">
+
+
+
+        <section class="favoritos">
+            <h2 class="favoritos__title">Favoritos de Brumadinho</h2>
+
+            <article class="favoritos__card favoritos__card--start">
+                <div class="favorites__card-image"
+                    style="background-image:url(https://i.postimg.cc/tT9914Kb/Topo-do-mundo.png)"></div>
                 </div>
-                <div class="cardFavoritoTexto">
-                    <h3>Topo do mundo</h3>
-                    <p>O topo do mundo é um lugar maravilhoso
+                <div class="favorites__card-content">
+                    <h3 class="favorites__card-title">Topo do mundo</h3>
+                    <p class="favorites__card-description">O topo do mundo é um lugar maravilhoso
                         para quem busca aventura, e experimentação
                         dos sabores da culinária local.</p>
                 </div>
             </article>
 
-            <article class="cardFavorito alinharEnd">
-                <div class="cardFavoritoBg cardFavoritoBg2">
+            <article class="favoritos__card favoritos__card--end">
+                <div class="favorites__card-image"
+                    style="background-image:url(https://i.postimg.cc/JhYQ0PYG/Cachoeira-das-Ostras.png)"></div>
                 </div>
-                <div class="cardFavoritoTexto">
-                    <h3>Ruínas do Forte</h3>
-                    <p>A cachoeira das Ostras é um lugar imperdível para quem busca contato direto com
+                <div class="favorites__card-content">
+                    <h3 class="favorites__card-title">Ruínas do Forte</h3>
+                    <p class="favorites__card-description">A cachoeira das Ostras é um lugar imperdível para quem busca
+                        contato direto com
                         a natureza e relaxamento.</p>
                 </div>
             </article>
 
-            <article class="cardFavorito alinharStart">
-                <div class="cardFavoritoBg cardFavoritoBg3">
+            <article class="favoritos__card favoritos__card--start">
+                <div class="favorites__card-image cardFavoritoBg3"
+                    style="background-image:url(https://i.postimg.cc/PqDqvq2B/Ruinas-do-Forte.png)"></div>
                 </div>
-                <div class="cardFavoritoTexto">
-                    <h3>Topo do mundo</h3>
-                    <p>Ruínas do Forte, um mergulho na história,
+                <div class="favorites__card-content">
+                    <h3 class="favorites__card-title">Topo do mundo</h3>
+                    <p class="favorites__card-description">Ruínas do Forte, um mergulho na história,
                         para curiosos que buscam conhecer mais sobre a vegetação local.</p>
                 </div>
             </article>
         </section>
 
-        <section class="Carrossel">
-            <div class="group">
+        <section class="carousel">
+            <div class="carousel__container">
 
-                <h2 class="h2Carrossel">Acontece este mês</h2>
+                <h2 class="carousel__title">Acontece este mês</h2>
 
-                <article class="cardCarrossel">
-                    <span class="cardCarrosselData">18<br />ABR</span>
-                    <div class="imgCardCarrossel">
-                        <img src="assets/images/a4a60aa390dd4684f34d20aa731f9e492c4d080f.png" alt="">
+                <article class="carousel__card">
+                    <span class="carousel__date">18<br />ABR</span>
+                    <div class="carousel__image">
+                        <img src="assets/images/a4a60aa390dd4684f34d20aa731f9e492c4d080f.png" alt=""
+                            class="carousel__image-content">
                     </div>
-                    <div class="cardCarrosselTextos">
-                        <h3>Gastronomia Mineira</h3>
-                        <p>Quadra de eventos de Brumadinho</p>
+                    <div class="carousel__content">
+                        <h3 class="carousel__card-title">Gastronomia Mineira</h3>
+                        <p class="carousel__card-location">Quadra de eventos de Brumadinho</p>
                     </div>
                 </article>
 
-                <article class="cardCarrossel">
-                    <span class="cardCarrosselData">18<br />ABR</span>
-                    <div class="imgCardCarrossel">
-                        <img src="assets/images/b386d306b4303412b92b3ef860656a1a34e564bf.jpg" alt="">
+                <article class="carousel__card">
+                    <span class="carousel__date">18<br />ABR</span>
+                    <div class="carousel__image">
+                        <img src="assets/images/b386d306b4303412b92b3ef860656a1a34e564bf.jpg" alt=""
+                            class="carousel__image-content">
                     </div>
-                    <div class="cardCarrosselTextos">
-                        <h3>Show de Sanfona</h3>
-                        <p>Quadra de eventos de Brumadinho</p>
+                    <div class="carousel__content">
+                        <h3 class="carousel__card-title">Show de Sanfona</h3>
+                        <p class="carousel__card-location">Quadra de eventos de Brumadinho</p>
                     </div>
                 </article>
             </div>
         </section>
 
         <section class="newsletter">
-            <div class="containerNewsletter">
-                <h2 class="newsletterH2">Assine a nossa <span> Newsletter </span> e receba novidades turísticas em
+            <div class="newsletter__content">
+                <h2 class="newsletter__title">Assine a nossa <span> Newsletter </span> e receba novidades turísticas em
                     primeira mão!</h2>
-                <div class="containerInputsNewsletter">
-                    <label for="inputEmailNewsletter" class="sr-only">Digite seu e-mail</label>
-                    <input type="email" name="" id="inputEmailNewsletter" class="inputEmailNewsletter"
+                <div class="newsletter__form">
+                    <label for="newsletter-email" class="sr-only">Digite seu e-mail</label>
+                    <input type="email" name="" id="newsletter-email" class="newsletter__input"
                         placeholder="Digite seu e-mail">
-                    <button class="btnEmailNewsletter">Inscrever</button>
+                    <button class="newsletter__button">Inscrever</button>
                 </div>
             </div>
-            <div class="containerSvgNewsletter">
+            <div class="newsletter__illustration">
 
-                <svg width="127" height="149" viewBox="0 0 283 324" fill="none" xmlns="http://www.w3.org/2000/svg"
-                    class="t">
+                <svg class="newsletter__illustration-svg" width="127" height="149" viewBox="0 0 283 324" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" class="t">
                     <path
                         d="M59.4679 105.462C62.0957 105.757 64.0274 109.268 66.9062 108.736C69.9601 108.171 71.8776 105.979 74.7824 105.146C76.2076 104.734 77.6919 104.778 79.0437 105.387C80.4759 106.036 81.269 107.681 82.7747 108.198C84.5881 108.818 86.3352 107.562 88.1794 107.566C90.3384 107.571 92.0453 109.257 94.1641 109.565C97.1375 110.003 100.026 109.794 102.938 109.198C105.894 108.596 108.645 108.837 111.417 109.983C114.635 111.309 119.021 111.192 120.837 114.418C121.874 116.256 124.864 114.629 123.83 112.793C122.248 109.985 119.886 109.029 116.654 108.343C111.316 107.208 106.6 105.106 101.912 102.744C100.132 101.845 98.0797 100.968 96.1645 100.301C94.2233 99.6242 92.2063 99.2416 90.1301 99.202C87.2182 99.1493 84.3821 100.11 81.8064 97.8651C80.7884 96.979 79.9812 95.6487 78.582 95.1759C77.1569 94.6966 76.2383 94.7296 74.7564 95.0242C71.5509 95.6641 69.3682 97.023 65.8811 96.9174C65.5686 96.9086 65.5402 97.3132 65.8101 97.399C67.2423 97.8651 68.3597 97.9399 69.8535 97.6254C71.3118 97.3176 72.7062 96.7987 74.1645 96.4865C75.6962 96.1566 77.5807 96.1214 78.9277 96.9724C80.3197 97.8541 81.314 99.7539 79.1573 100.436C78.2364 100.728 77.4031 100.398 76.494 100.323C75.6394 100.253 74.7871 100.392 73.9822 100.715C73.7573 100.805 71.7924 101.814 71.7332 101.744C71.3189 101.267 70.7247 100.915 70.1116 100.721C69.3611 100.484 67.6874 100.348 67.1382 101.003C67.3725 101.216 68.4615 100.99 68.9161 101.133C69.4535 101.304 70.1211 101.579 70.5685 101.885C70.2702 102.36 68.8474 102.428 68.2745 102.529C66.4729 102.843 65.2869 104.288 63.2794 103.732C63.58 104.336 64.5151 104.426 65.1496 104.383C66.0776 104.314 66.8754 103.659 67.7703 103.435C68.5657 103.233 69.4369 103.259 70.2442 103.046C71.6291 102.676 72.8506 101.937 74.2166 101.522C76.397 100.856 78.5371 101.955 80.6724 101.018C80.8547 100.939 82.0928 100.066 81.7804 99.7847C83.5701 101.392 85.9564 101.137 88.2527 101.177C91.1196 101.229 93.9557 101.064 96.6451 102.175C99.0503 103.167 103.518 104.937 105.532 106.513C101.411 107.637 96.6782 108.897 93.4728 107.527C90.1632 106.113 86.7471 105.546 83.9134 106.81C80.644 103.771 77.7535 102.401 73.5869 103.949C70.1542 105.227 68.1609 108.433 63.3954 106.183C60.7865 104.954 62.1335 104.759 59.4726 105.06C59.1909 105.093 59.1909 105.429 59.4679 105.462Z"
                         fill="#4D2708" />
@@ -309,10 +317,11 @@
         </section>
     </main>
 
+
     <footer class="footer">
-        <span class="logoFooter">
+        <span class="footer__logo">
             <svg data-logo="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 283.88999938964844 41"
-                class="headerLogo">
+                class="footer__logo-image">
                 <g id="logogram" transform="
     translate(0, 0.5)
     rotate(0 20 20)
@@ -329,39 +338,42 @@
 
             </svg>
         </span>
-        <span class="boxFooter">
-            <ul>
-                <li>Central de ajuda</li>
-                <li> <a href="">Dúvidas frequentes</a> </li>
-                <li> <a href="">Chat de suporte</a> </li>
+        <span class="footer__section">
+            <ul class="footer__list">
+                <li class="footer__title">Central de ajuda</li>
+                <li class="footer__item"> <a href="" class="footer__link">Dúvidas frequentes</a> </li>
+                <li class="footer__item"> <a href="" class="footer__link">Chat de suporte</a> </li>
             </ul>
         </span>
-        <span class="boxFooter">
-            <ul>
-                <li>Sobre nós</li>
-                <li> <a href="">Nossa missão</a> </li>
-                <li> <a href="">Seja parceiro</a> </li>
-                <li> <a href="">Blog</a> </li>
+        <span class="footer__section">
+            <ul class="footer__list">
+                <li class="footer__title">Sobre nós</li>
+                <li class="footer__item"> <a href="" class="footer__link">Nossa missão</a> </li>
+                <li class="footer__item"> <a href="" class="footer__link">Seja parceiro</a> </li>
+                <li class="footer__item"> <a href="" class="footer__link">Blog</a> </li>
             </ul>
         </span>
-        <span class="boxFooter boxFooter--redesSociais">
-            <ul>
-                <li>Redes socias</li>
-                <li> <a href=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                            class="icon icon-tabler icons-tabler-filled icon-tabler-brand-instagram">
+        <span class="footer__section footer__section--social">
+            <ul class="footer__list__social">
+                <li class="footer__title__social">Redes socias</li>
+                <li class="footer__item__social"> <a href="" class="footer__social-link__social"><svg
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="icon icon-tabler icons-tabler-filled icon-tabler-brand-instagram footer__social-icon">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <path
                                 d="M16 3a5 5 0 0 1 5 5v8a5 5 0 0 1 -5 5h-8a5 5 0 0 1 -5 -5v-8a5 5 0 0 1 5 -5zm-4 5a4 4 0 0 0 -3.995 3.8l-.005 .2a4 4 0 1 0 4 -4m4.5 -1.5a1 1 0 0 0 -.993 .883l-.007 .127a1 1 0 0 0 1.993 .117l.007 -.127a1 1 0 0 0 -1 -1" />
                         </svg></a> </li>
-                <li> <a href=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="icon icon-tabler icons-tabler-outline icon-tabler-brand-x">
+                <li class="footer__item__social"> <a href="" class="footer__social-link__social"><svg
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-brand-x footer__social-icon">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <path d="M4 4l11.733 16h4.267l-11.733 -16l-4.267 0" />
                             <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
                         </svg></a> </li>
-                <li> <a href=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                            class="icon icon-tabler icons-tabler-filled icon-tabler-mail">
+                <li class="footer__item__social"> <a href="" class="footer__social-link__social"><svg
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="icon icon-tabler icons-tabler-filled icon-tabler-mail footer__social-icon">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <path
                                 d="M22 7.535v9.465a3 3 0 0 1 -2.824 2.995l-.176 .005h-14a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-9.465l9.445 6.297l.116 .066a1 1 0 0 0 .878 0l.116 -.066l9.445 -6.297z" />
