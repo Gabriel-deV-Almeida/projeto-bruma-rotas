@@ -36,33 +36,84 @@ svg {
 
 /* ==========================================================================
    PARTE 2: VARIÁVEIS GLOBAIS (:root)
-   - Define as "constantes" do seu design (cores, fontes, espaçamentos).
+   - Define as "constantes" do design (cores, fontes, espaçamentos).
+   - NOTA: cores do projeto (ex: #FCC650, #4D2708) estão hardcoded nos
+     componentes. Considere migrá-las para variáveis futuramente.
    ========================================================================== */
 
 :root {
-  /* CORES (Colors) */
+
+  /* --- Cores de interface (estado/feedback) --- */
   --cor-primaria: #007bff;
   --cor-secundaria: #6c757d;
-  --cor-fundo: #ffffff;
-  --cor-texto: #212529;
   --cor-sucesso: #28a745;
   --cor-perigo: #dc3545;
   --cor-aviso: #ffc107;
 
-  /* TIPOGRAFIA (Typography) */
-  --fonte-principal: 'meursault-variable', serif;
-  --fonte-mono: "Courier New", Courier, monospace;
+  /* --- Cores base da página --- */
+  --cor-fundo: #ffffff;
+  --cor-texto: #212529;
 
+  /* --- Paleta do projeto --- */
+  --cor-dourado: #FCC650;
+  /* Links, botões e textos de destaque        */
+  --cor-marrom-escuro: #4D2708;
+  /* Fundos escuros, footer, inputs             */
+  --cor-marrom-header: #532A09;
+  /* Base do header/hero blur (uso em rgba)     */
+  --cor-marrom-medio: #7B4618;
+  /* Card-content, card-title color             */
+  --cor-creme: #FEFAE0;
+  /* Textos sobre fundos escuros, bg favoritos  */
+  --cor-verde-floresta: #2E401C;
+  /* Carousel bg, newsletter span               */
+  --cor-verde-claro: #BFC882;
+  /* Cards do carousel, labels de favoritos     */
+  --cor-verde-oliva: #A4B75C;
+  /* Carousel title, newsletter bg              */
+  --cor-laranja: #ff7300;
+  /* Accent do hero (span)                      */
+
+  /* --- Tipografia --- */
+  --fonte-principal: 'meursault-variable', serif;
+  --fonte-secundaria: "rl-horizon";
+  /* Corpo, descrições, labels  */
+  --fonte-display: "dovetail-mvb";
+  /* Botões e labels de cards   */
+  --fonte-mono: "Courier New", Courier, monospace;
   --tamanho-base-fonte: 1rem;
   /* Geralmente 16px */
   --altura-linha: 1.5;
 
-  /* ESPAÇAMENTO E LAYOUT (Spacing & Layout) */
-  --espacamento-base: 1rem;
+  /* --- Raios de borda --- */
   --raio-borda: 0.25rem;
+  /* 4px  — genérico                           */
+  --raio-borda-sm: 8px;
+  /* Elementos pequenos (cantos de date badge) */
+  --raio-borda-md: 12px;
+  /* Cards e imagens                           */
+  --raio-borda-pill: 46px;
+  /* Pílula (botões, inputs)                   */
+
+  /* --- Espaçamento e Layout --- */
+  --espacamento-base: 1rem;
+  /* 16px */
+  --espacamento-xs: 4px;
+  --espacamento-sm: 8px;
+  --espacamento-md: 12px;
+  --espacamento-lg: 16px;
+  --espacamento-xl: 24px;
+  --espacamento-secao: 48px;
+  /* Padding vertical padrão das seções        */
+  --padding-secao-horiz: 20px;
+  /* Padding horizontal base das seções        */
+
   --largura-container: 1140px;
+  --altura-header: 64px;
 }
 
+/* --- Tema escuro --- */
+/* ATENÇÃO: mantém nomenclatura legada em inglês (color-body-default). */
 [data-theme="dark"] {
   --color-body-default: #06005e;
 }
@@ -73,8 +124,8 @@ svg {
    ========================================================================== */
 
 html {
-  /* Define a base para que 1rem = 16px */
   font-size: 16px;
+  /* Define a base para que 1rem = 16px */
   scroll-behavior: smooth;
 }
 
@@ -89,13 +140,18 @@ body {
   position: relative;
 }
 
+
+/* ==========================================================================
+   PARTE 4: HEADER
+   ========================================================================== */
+
 .header {
   background-color: rgba(83, 42, 9, 0.4);
+  /* --cor-marrom-header com opacidade */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  height: 64px;
+  height: var(--altura-header);
   width: 100dvw;
-  padding: 0px 20px;
-
+  padding: 0px var(--padding-secao-horiz);
 
   display: flex;
   justify-content: space-between;
@@ -130,7 +186,7 @@ body {
 }
 
 .header__menu-link {
-  color: #FCC650;
+  color: var(--cor-dourado);
   text-decoration: none;
   display: flex;
   justify-content: center;
@@ -142,21 +198,20 @@ main {
   width: 100dvw;
 }
 
+
+/* ==========================================================================
+   PARTE 5: HERO
+   ========================================================================== */
+
 .hero {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/images/294cf9c508a18c843e2222c8af6925897d0c2ec3.png) no-repeat center center;
   background-size: cover;
   width: 100%;
-  /*height: 308px;*/
   height: 270px;
   color: white;
   overflow: hidden;
   position: relative;
-  padding: 80px 20px;
-  /*antigo*/
-
-
-  position: relative;
-
+  padding: 80px var(--padding-secao-horiz);
 }
 
 .hero__content {
@@ -166,13 +221,13 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: var(--espacamento-md);
 }
 
 .hero__blur {
   backdrop-filter: blur(2px);
   background-color: rgba(83, 42, 9, 0.4);
-  /*-webkit-backdrop-filter: blur(5px);*/
+  /* --cor-marrom-header com opacidade */
   position: absolute;
   z-index: 1;
   inset: 0;
@@ -181,44 +236,44 @@ main {
 .hero__title {
   font-size: 18px;
   font-weight: 900;
-  color: #FEFAE0;
+  color: var(--cor-creme);
   text-align: center;
   line-height: 19px;
   z-index: 2;
 
   span {
-    color: #ff7300;
+    color: var(--cor-laranja);
   }
 }
 
 .hero__description {
   font-size: 10px;
   font-weight: 400;
-  color: #FEFAE0;
+  color: var(--cor-creme);
   text-align: center;
   line-height: 14px;
-  font-family: "rl-horizon";
+  font-family: var(--fonte-secundaria);
 }
 
 .hero__actions {
-  margin-top: 4px;
+  margin-top: var(--espacamento-xs);
   width: 100%;
   height: 32px;
   display: flex;
   justify-content: center;
-  gap: 16px;
+  gap: var(--espacamento-lg);
 }
 
 .btn {
-  background-color: #FCC650;
-  color: #4D2708;
+  background-color: var(--cor-dourado);
+  color: var(--cor-marrom-escuro);
   width: 86px;
   height: 32px;
-  border-radius: 46px;
+  border-radius: var(--raio-borda-pill);
   font-size: 10px;
   line-height: 14px;
   font-weight: 700;
-  font-family: "dovetail-mvb";
+  font-family: var(--fonte-display);
   border: none;
 
   .bold {
@@ -237,8 +292,8 @@ main {
   line-height: 0;
   width: 100%;
   position: absolute;
-  margin-left: -20px;
-  margin-right: -20px;
+  margin-left: calc(-1 * var(--padding-secao-horiz));
+  margin-right: calc(-1 * var(--padding-secao-horiz));
   z-index: 2;
   bottom: -0.5px;
   max-height: 70px;
@@ -250,17 +305,20 @@ main {
   display: block;
 }
 
+/* ==========================================================================
+   PARTE 6: FAVORITOS
+   ========================================================================== */
+
 .favoritos {
   width: 100%;
-  padding: 0px 20px;
-
-  padding-bottom: 48px;
-  background-color: #FEFAE0;
+  padding: 0px var(--padding-secao-horiz);
+  padding-bottom: var(--espacamento-secao);
+  background-color: var(--cor-creme);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 24px;
+  gap: var(--espacamento-xl);
 }
 
 .favoritos__card {
@@ -324,7 +382,7 @@ main {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 12px;
+  border-radius: var(--raio-borda-md);
 }
 
 .favorites__card-content {
@@ -344,16 +402,15 @@ main {
   width: 226px;
   height: 77px;
 
-  background-color: #7B4618;
+  background-color: var(--cor-marrom-medio);
   position: absolute;
   bottom: 0;
   right: 0;
   z-index: 5;
-  border-radius: 12px;
+  border-radius: var(--raio-borda-md);
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 .favorites__card-title {
@@ -401,31 +458,34 @@ main {
       22px);
 
   line-height: 14px;
-  font-family: "dovetail-mvb";
-  background-color: #BFC882;
-  border-radius: 46px;
+  font-family: var(--fonte-display);
+  background-color: var(--cor-verde-claro);
+  border-radius: var(--raio-borda-pill);
 
-  color: #7B4618;
-  -webkit-box-shadow: 0px 4px 4px 0px #532A09;
-  box-shadow: 0px 4px 4px 0px #532A09;
+  color: var(--cor-marrom-medio);
+  -webkit-box-shadow: 0px 4px 4px 0px var(--cor-marrom-header);
+  box-shadow: 0px 4px 4px 0px var(--cor-marrom-header);
 }
 
 .favorites__card-description {
-  /*font-size: 10px;*/
   font-size: clamp(10px,
       calc(10px + (12 * ((100vw - 375px) / 1065))),
       22px);
   font-weight: 0 !important;
   text-align: center;
   line-height: 14px;
-  font-family: "rl-horizon";
-  color: #FEFAE0;
-  padding: 0 8px;
+  font-family: var(--fonte-secundaria);
+  color: var(--cor-creme);
+  padding: 0 var(--espacamento-sm);
 }
 
+/* ==========================================================================
+   PARTE 7: CAROUSEL
+   ========================================================================== */
+
 .carousel {
-  background-color: #2E401C;
-  padding: 48px 20px;
+  background-color: var(--cor-verde-floresta);
+  padding: var(--espacamento-secao) var(--padding-secao-horiz);
 
   display: flex;
   overflow: auto;
@@ -435,7 +495,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: var(--espacamento-lg);
   width: auto;
 }
 
@@ -444,8 +504,8 @@ main {
   font-size: 14px;
   font-weight: 900;
   line-height: 14px;
-  color: #A4B75C;
-  font-family: "meursault-variable";
+  color: var(--cor-verde-oliva);
+  font-family: var(--fonte-principal);
 }
 
 .carousel__container::-webkit-scrollbar {
@@ -456,11 +516,11 @@ main {
   flex: 0 0 156px;
   width: 156px;
   height: 155px;
-  background-color: #BFC882;
+  background-color: var(--cor-verde-claro);
   padding: 6px;
-  margin-right: 16px;
+  margin-right: var(--espacamento-lg);
   position: relative;
-  border-radius: 12px;
+  border-radius: var(--raio-borda-md);
 
   display: flex;
   flex-direction: column;
@@ -472,34 +532,31 @@ main {
   position: absolute;
   right: 0px;
   top: 45px;
-  background-color: #BFC882;
-  color: #4D2708;
+  background-color: var(--cor-verde-claro);
+  color: var(--cor-marrom-escuro);
   width: 55px;
   height: 42px;
 
   font-size: 10px;
   font-weight: 700;
   line-height: 10px;
-  color: #4D2708;
-  font-family: "rl-horizon";
+  font-family: var(--fonte-secundaria);
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
+  border-top-left-radius: var(--raio-borda-sm);
+  border-bottom-left-radius: var(--raio-borda-sm);
 }
 
 .carousel__image {
   width: 100%;
   height: 110px;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: var(--raio-borda-md);
   display: flex;
   align-items: center;
-
-
 }
 
 .carousel__image-content {
@@ -509,10 +566,10 @@ main {
 
 
 .carousel__content {
-  color: #4D2708;
-  font-family: "rl-horizon";
+  color: var(--cor-marrom-escuro);
+  font-family: var(--fonte-secundaria);
   text-align: start;
-  padding: 4px 0px;
+  padding: var(--espacamento-xs) 0px;
 }
 
 .carousel__card-title {
@@ -527,13 +584,15 @@ main {
   line-height: 10px;
 }
 
+/* ==========================================================================
+   PARTE 8: NEWSLETTER
+   ========================================================================== */
+
 .newsletter {
-  background-color: #A4B75C;
-  padding: 48px 20px;
-  /*antigo*/
+  background-color: var(--cor-verde-oliva);
+  padding: var(--espacamento-secao) var(--padding-secao-horiz);
 
   display: flex;
-  /*overflow: auto;*/
   position: relative;
   overflow: hidden;
 }
@@ -544,7 +603,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: var(--espacamento-lg);
 }
 
 .containerSvgNewsletter {}
@@ -560,12 +619,12 @@ main {
   font-size: 12px;
   font-weight: 900;
   line-height: 12px;
-  color: #4D2708;
-  font-family: "meursault-variable";
+  color: var(--cor-marrom-escuro);
+  font-family: var(--fonte-principal);
   text-align: center;
 
   span {
-    color: #2E401C;
+    color: var(--cor-verde-floresta);
   }
 }
 
@@ -593,53 +652,57 @@ main {
   width: 100%;
   height: 25px;
 
-  padding-left: 12px;
+  padding-left: var(--espacamento-md);
 
   border: none;
-  border-radius: 46px;
+  border-radius: var(--raio-borda-pill);
   outline: none;
 
   box-sizing: border-box;
 
-  background-color: #4D2708;
-  color: #FCC650;
+  background-color: var(--cor-marrom-escuro);
+  color: var(--cor-dourado);
 }
 
 .newsletter__input::placeholder {
-  color: #FCC650;
+  color: var(--cor-dourado);
   font-weight: 400;
   font-size: 8px;
   position: absolute;
   bottom: 7px;
-  font-family: "rl-horizon";
+  font-family: var(--fonte-secundaria);
 }
 
 .newsletter__button {
-  background-color: #4D2708;
+  background-color: var(--cor-marrom-escuro);
   width: 86px;
   height: 25px;
-  border-radius: 46px;
-  border: 1px solid #FCC650;
+  border-radius: var(--raio-borda-pill);
+  border: 1px solid var(--cor-dourado);
   outline: none;
 
   font-size: 10px;
   font-weight: 700;
   line-height: 14px;
-  color: #FCC650;
-  font-family: "rl-horizon";
+  color: var(--cor-dourado);
+  font-family: var(--fonte-secundaria);
 
   position: absolute;
   right: 0;
 }
 
+/* ==========================================================================
+   PARTE 9: FOOTER
+   ========================================================================== */
+
 .footer {
   width: 100dvw;
-  padding: 48px 20px;
+  padding: var(--espacamento-secao) var(--padding-secao-horiz);
 
   display: flex;
   justify-content: center;
-  gap: 16px;
-  background-color: #4D2708;
+  gap: var(--espacamento-lg);
+  background-color: var(--cor-marrom-escuro);
 }
 
 .footer__logo {
@@ -652,15 +715,14 @@ main {
   font-size: 10px;
   font-weight: 700;
   line-height: 10px;
-  color: #FCC650;
-  font-family: "rl-horizon";
-
+  color: var(--cor-dourado);
+  font-family: var(--fonte-secundaria);
 }
 
 .footer__list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--espacamento-sm);
 }
 
 .footer__title {
@@ -678,7 +740,7 @@ main {
   font-weight: 400;
   line-height: 8px;
 
-  color: #FCC650;
+  color: var(--cor-dourado);
 }
 
 .footer__section--social {
@@ -697,12 +759,13 @@ main {
 .footer__title__social {
   width: 100%;
   margin-bottom: 6px;
+  /* valor específico de layout, sem variável */
 }
 
 .footer__item__social {}
 
 .footer__social-link__social {
-  color: #FCC650;
+  color: var(--cor-dourado);
 }
 
 .footer__social-icon {
@@ -711,6 +774,11 @@ main {
 }
 
 
+/* ==========================================================================
+   PARTE 10: RESPONSIVIDADE
+   ========================================================================== */
+
+/* --- Breakpoint: 425px (Mobile L) --- */
 @media (min-width: 425px) {
 
   .header {
@@ -787,6 +855,7 @@ main {
   }
 }
 
+/* --- Breakpoint: 590px --- */
 @media (min-width: 590px) {
 
   .header {}
@@ -849,6 +918,7 @@ main {
   }
 }
 
+/* --- Breakpoint: 768px (Tablet) --- */
 @media (min-width: 768px) {
 
   .header {
@@ -925,6 +995,7 @@ main {
   }
 }
 
+/* --- Breakpoint: 915px --- */
 @media (min-width: 915px) {
 
   .header {}
@@ -983,6 +1054,7 @@ main {
   }
 }
 
+/* --- Breakpoint: 1024px (Desktop S) --- */
 @media (min-width: 1024px) {
 
   .header {
@@ -1059,6 +1131,7 @@ main {
   }
 }
 
+/* --- Breakpoint: 1165px --- */
 @media (min-width: 1165px) {
 
   .header {}
@@ -1116,6 +1189,7 @@ main {
   }
 }
 
+/* --- Breakpoint: 1440px (Desktop L) --- */
 @media (min-width: 1440px) {
   .defaultDesktop {
     top: 150px;
