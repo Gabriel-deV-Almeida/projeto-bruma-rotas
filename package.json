@@ -1,0 +1,27 @@
+{
+  "name": "projeto-bruma-rotas",
+  "version": "1.0.0",
+  "description": "> Descrição de uma linha que resume o projeto de forma clara e atrativa.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gabrielgc123/projeto-bruma-rotas.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gabrielgc123/projeto-bruma-rotas/issues"
+  },
+  "homepage": "https://github.com/Gabrielgc123/projeto-bruma-rotas#readme",
+  "dependencies": {
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "vite": "^8.0.16"
+  }
+}
