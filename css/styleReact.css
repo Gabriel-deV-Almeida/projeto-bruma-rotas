@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+    --font-meursault: 'meursault-variable', serif;
+    --font-dovetail: 'dovetail-mvb', sans-serif;
+
+    --text-heading-1: 20px;
+    --text-heading-2: 16px;
+    --text-heading-3: 12px;
+    --text-heading-4: 10px;
+
+    --text-hero: 12px;
+    --text-body: 12px;
+    --text-links: 8px;
+    --text-button-1: 8px;
+    --text-button-2: 16px;
+}
