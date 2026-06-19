@@ -2,7 +2,7 @@ import { Icon } from "./Icons";
 
 export default function Header() {
     return (
-        <header className="w-full h-16 bg-[#2D5016] font-meursault text-white px-5 flex items-center justify-between shadow-md">
+        <header className="w-full h-16 bg-[#4D2708] font-meursault text-white px-5 flex items-center justify-between shadow-md">
             <div className="flex items-center gap-1">
                 <Icon
                     name="logo"
@@ -14,7 +14,7 @@ export default function Header() {
             <nav>
                 <ul className="flex items-center gap-3 text-sm">
                     <li>
-                        <a href="/" className="text-heading-4 text-[#fcc650] flex items-center gap-[3px]">
+                        <a href="/" className="text-heading-4 text-[#fcc650] flex items-center gap-0.75">
                             <Icon
                                 name="menuHome"
                                 size={12}
@@ -24,7 +24,7 @@ export default function Header() {
                         </a>
                     </li>
                     <li>
-                        <a href="/react.html" className="text-heading-4 text-[#fcc650] flex items-center gap-[3px]">
+                        <a href="/react.html" className="text-heading-4 text-[#fcc650] flex items-center gap-0.75">
                             <Icon
                                 name="user"
                                 size={8}

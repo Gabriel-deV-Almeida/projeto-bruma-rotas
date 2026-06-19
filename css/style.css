@@ -700,7 +700,6 @@ main {
   padding: var(--espacamento-secao) var(--padding-secao-horiz);
 
   display: flex;
-  justify-content: center;
   gap: var(--espacamento-lg);
   background-color: var(--cor-marrom-escuro);
 }
@@ -710,13 +709,13 @@ main {
 }
 
 .footer__section {
-  min-width: 62px;
+  min-width: 63px;
 
   font-size: 10px;
   font-weight: 700;
   line-height: 10px;
   color: var(--cor-dourado);
-  font-family: var(--fonte-secundaria);
+  font-family: var(--fonte-display);
 }
 
 .footer__list {

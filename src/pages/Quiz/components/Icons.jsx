@@ -1,11 +1,11 @@
 import React from "react";
 
 const icons = {
-    logo: ({ width = 98, height = "auto" }) => (
+    logo: ({ size = 98, height = "auto" }) => (
         <svg
             data-logo="header__logo-image"
             xmlns="http://www.w3.org/2000/svg"
-            width={width}
+            width={size}
             height={height}
             viewBox="0 0 283.89 41"
             fill="none"
@@ -51,6 +51,64 @@ const icons = {
             <path
                 fill={color}
                 d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0S96 57.3 96 128s57.3 128 128 128m89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4"
+            />
+        </svg>
+    ),
+    instagram: ({ size = 24, color = "currentColor" }) => (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width={size}
+            height={size}
+            fill={color}
+        >
+            <path
+                stroke="none"
+                d="M0 0h24v24H0z"
+                fill="none"
+            />
+            <path
+                d="M16 3a5 5 0 0 1 5 5v8a5 5 0 0 1 -5 5h-8a5 5 0 0 1 -5 -5v-8a5 5 0 0 1 5 -5zm-4 5a4 4 0 0 0 -3.995 3.8l-.005 .2a4 4 0 1 0 4 -4m4.5 -1.5a1 1 0 0 0 -.993 .883l-.007 .127a1 1 0 0 0 1.993 .117l.007 -.127a1 1 0 0 0 -1 -1"
+            />
+        </svg>
+    ), x: ({ size = 24, color = "currentColor", strokeWidth = 2 }) => (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width={size}
+            height={size}
+            fill="none"
+            stroke={color}
+            strokeWidth={strokeWidth}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        >
+            <path
+                stroke="none"
+                d="M0 0h24v24H0z"
+                fill="none"
+            />
+            <path d="M4 4l11.733 16h4.267l-11.733 -16h-4.267" />
+            <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+        </svg>
+    ), mail: ({ size = 24, color = "currentColor" }) => (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width={size}
+            height={size}
+            fill={color}
+        >
+            <path
+                stroke="none"
+                d="M0 0h24v24H0z"
+                fill="none"
+            />
+            <path
+                d="M22 7.535v9.465a3 3 0 0 1 -2.824 2.995l-.176 .005h-14a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-9.465l9.445 6.297l.116 .066a1 1 0 0 0 .878 0l.116 -.066l9.445 -6.297z"
+            />
+            <path
+                d="M19 4c1.08 0 2.027 .57 2.555 1.427l-9.555 6.37l-9.555 -6.37a2.999 2.999 0 0 1 2.354 -1.42l.201 -.007h14z"
             />
         </svg>
     ),
