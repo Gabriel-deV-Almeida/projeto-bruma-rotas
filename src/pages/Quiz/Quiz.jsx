@@ -27,6 +27,11 @@ export default function Quiz() {
                     <h3 className="text-lg font-semibold text-[#2D5016] mb-2">🎨 Arte & Cultura</h3>
                     <p className="text-gray-600 text-sm">Inhotim e outras experiências artísticas imperdíveis.</p>
                 </div>
+
+                <div className="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
+                    <h3 className="text-lg font-semibold text-[#2D5016] mb-2">🎨 Arte & Cultura</h3>
+                    <p className="text-gray-600 text-sm">Inhotim e outras experiências artísticas imperdíveis.</p>
+                </div>
             </Content>
 
             <Footer />
